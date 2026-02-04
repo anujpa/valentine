@@ -20,14 +20,13 @@ Try hovering over the "No" button - it will run away! The only way forward is to
 ### Option 1: GitHub Pages
 
 1. Fork or clone this repository
-2. Rename `valentine.html` to `index.html`
-3. Go to your repository Settings → Pages
-4. Select your main branch as the source
-5. Your page will be live at `https://yourusername.github.io/repository-name`
+2. Go to your repository Settings → Pages
+3. Select your main branch as the source
+4. Your page will be live at `https://yourusername.github.io/repository-name`
 
 ### Option 2: Local Use
 
-1. Download the `valentine.html` file
+1. Download the `index.html` file
 2. Open it directly in your web browser
 3. Share the file with your Valentine!
 
