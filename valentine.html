@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #ffd1ff 100%);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .question-page {
+            display: block;
+        }
+
+        .answer-page {
+            display: none;
+        }
+
+        h1 {
+            color: #ff1744;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .question {
+            font-size: 1.8em;
+            color: #c51162;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            position: relative;
+            min-height: 60px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .no-btn {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #c51162;
+            position: absolute;
+        }
+
+        .answer-content {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .celebration {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        .love-message {
+            font-size: 1.5em;
+            color: #c51162;
+            line-height: 1.6;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .hearts-float {
+            position: fixed;
+            font-size: 2em;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .hearts-float:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .hearts-float:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.5s; }
+        .hearts-float:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 1s; }
+        .hearts-float:nth-child(4) { bottom: 25%; right: 10%; animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <div class="hearts-float">💖</div>
+    <div class="hearts-float">💕</div>
+    <div class="hearts-float">💗</div>
+    <div class="hearts-float">💝</div>
+
+    <div class="container">
+        <div class="question-page" id="questionPage">
+            <h1>Hey You! 💌</h1>
+            <div class="heart">❤️</div>
+            <div class="question">Will you be my Valentine?</div>
+            <div class="button-container" id="buttonContainer">
+                <button class="yes-btn" id="yesBtn">Yes! 💕</button>
+                <button class="no-btn" id="noBtn">No</button>
+            </div>
+        </div>
+
+        <div class="answer-page" id="answerPage">
+            <div class="answer-content">
+                <div class="celebration">🎉💖✨</div>
+                <h1>Yay!</h1>
+                <div class="love-message">
+                    I knew you'd say yes! 💕<br><br>
+                    You've just made me the happiest person alive!<br>
+                    Can't wait to spend this Valentine's Day with you.<br><br>
+                    You're absolutely wonderful! 🌹
+                </div>
+                <div class="celebration">💐💝💐</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const questionPage = document.getElementById('questionPage');
+        const answerPage = document.getElementById('answerPage');
+        const buttonContainer = document.getElementById('buttonContainer');
+
+        // Move the "No" button when mouse gets near it
+        noBtn.addEventListener('mouseover', () => {
+            const containerRect = buttonContainer.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            // Calculate random position within the container
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = 100; // Allow vertical movement
+            
+            const randomX = Math.random() * maxX;
+            const randomY = (Math.random() - 0.5) * maxY;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+
+        // Show love message when "Yes" is clicked
+        yesBtn.addEventListener('click', () => {
+            questionPage.style.display = 'none';
+            answerPage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
