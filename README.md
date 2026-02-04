@@ -2,20 +2,20 @@
 
 A fun, interactive Valentine's Day webpage that asks that special someone to be your Valentine! Features a playful "No" button that runs away and a sweet romantic reveal when they click "Yes".
 
-## ✨ Features
+## Features
 
-- 💖 Beautiful Valentine's themed design with gradient backgrounds
-- 🎯 Interactive "No" button that moves away when you try to click it
-- 💝 Sweet romantic message reveal when "Yes" is clicked
-- 🎨 Smooth animations and floating hearts
-- 📱 Fully responsive design for all devices
-- 🚀 Single file - no dependencies needed!
+- Beautiful Valentine's themed design with gradient backgrounds
+- Interactive "No" button that moves away when you try to click it
+- Sweet romantic message reveal when "Yes" is clicked
+- Smooth animations and floating hearts
+- Fully responsive design for all devices
+- Single file - no dependencies needed!
 
-## 🎥 Demo
+## Demo
 
-Try hovering over the "No" button - it will run away! The only way forward is to click "Yes" 😊
+Try hovering over the "No" button - it will run away! The only way forward is to click "Yes" 
 
-## 🚀 How to Use
+## How to Use
 
 ### Option 1: GitHub Pages
 
@@ -34,7 +34,7 @@ Try hovering over the "No" button - it will run away! The only way forward is to
 
 Simply upload the HTML file to any web hosting service - it's completely self-contained!
 
-## 💌 Customization
+## Customization
 
 Want to personalize it? Here are some easy customizations you can make:
 
@@ -67,34 +67,34 @@ Edit the main question text:
 <div class="question">Will you be my Valentine?</div>
 ```
 
-## 🎨 Color Palette
+## Color Palette
 
 - Primary Pink: `#ff1744`
 - Secondary Pink: `#c51162`
 - Gradient 1: `#ff9a9e` → `#fad0c4` → `#ffd1ff`
 - Button Gradient: `#f093fb` → `#f5576c`
 
-## 📱 Browser Support
+## Browser Support
 
 Works on all modern browsers:
-- ✅ Chrome
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Mobile browsers
+- Chrome
+- Firefox
+- Safari
+- Edge
+- Mobile browsers
 
-## 💡 Tips
+## Tips
 
 - Send the link to your crush or significant other
 - Perfect for Valentine's Day proposals
 - Great for a fun, lighthearted way to ask someone out
 - The "No" button makes it extra playful and fun!
 
-## 📄 License
+## License
 
-Feel free to use this for your Valentine's Day adventures! No attribution needed - just spread the love! 💕
+Feel free to use this for your Valentine's Day adventures! No attribution needed - just spread the love!
 
-## 🤝 Contributing
+## Contributing
 
 Got ideas to make this even more romantic? Feel free to fork and submit a pull request!
 
