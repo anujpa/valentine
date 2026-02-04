@@ -180,8 +180,8 @@
         const answerPage = document.getElementById('answerPage');
         const buttonContainer = document.getElementById('buttonContainer');
 
-        // Move the "No" button when mouse gets near it
-        noBtn.addEventListener('mouseover', () => {
+        // Function to move the "No" button
+        function moveNoButton() {
             const containerRect = buttonContainer.getBoundingClientRect();
             const btnRect = noBtn.getBoundingClientRect();
             
@@ -194,6 +194,21 @@
             
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
+        }
+
+        // Move the "No" button when mouse gets near it (desktop)
+        noBtn.addEventListener('mouseover', moveNoButton);
+
+        // Move the "No" button when touched/clicked (mobile)
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent default touch behavior
+            moveNoButton();
+        });
+
+        // Also move on click attempt (backup for mobile)
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
         });
 
         // Show love message when "Yes" is clicked
