@@ -69,6 +69,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            align-items: center;
             margin-top: 40px;
             position: relative;
             min-height: 200px;
@@ -84,11 +85,13 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            min-width: 120px;
         }
 
         .yes-btn {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
+            position: relative;
         }
 
         .yes-btn:hover {
@@ -99,10 +102,7 @@
         .no-btn {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
             color: #c51162;
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(60px);
+            position: relative;
         }
 
         .answer-content {
